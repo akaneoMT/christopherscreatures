@@ -1,6 +1,6 @@
 package net.akaneo.christopherscreatures.entity;
 
-public interface IHerdPanic {
+public interface IPanic {
 
     void onPanic();
 

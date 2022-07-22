@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
@@ -29,9 +30,14 @@ public class ChristophersCreatures {
     public ChristophersCreatures() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onModConfigEvent);
+
+        final ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
         CCItemRegistry.DEF_REG.register(FMLJavaModLoadingContext.get().getModEventBus());
         CCEntityRegistry.DEF_REG.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+        modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.COMMON_SPEC, "christopherscreatures.toml");
 
         GeckoLib.initialize();
 

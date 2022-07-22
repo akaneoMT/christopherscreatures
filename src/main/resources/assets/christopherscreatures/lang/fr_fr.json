@@ -1,4 +1,5 @@
 {
     "item.christopherscreatures.giraffe_spawn_egg" : "Oeuf de Giraffe",
-    "item.christopherscreatures.giraffe_hide" : "Peau de Giraffe"
+    "item.christopherscreatures.giraffe_hide" : "Peau de Giraffe",
+    "itemGroup.tab_cc": "Christopher's Creatures"
 }

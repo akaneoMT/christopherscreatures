@@ -1,13 +1,11 @@
 package net.akaneo.christopherscreatures.entity.ai;
 
 import com.google.common.base.Predicate;
-import net.akaneo.christopherscreatures.entity.IHerdPanic;
+import net.akaneo.christopherscreatures.entity.IPanic;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
-import net.minecraft.world.entity.ai.util.RandomPos;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.phys.AABB;
@@ -19,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.List;
 
-public class AnimalAIHerdPanic extends Goal {
+public class HerdPanicGoal extends Goal {
     protected final PathfinderMob creature;
     protected final double speed;
     protected final Predicate<? super PathfinderMob> targetEntitySelector;
@@ -28,15 +26,15 @@ public class AnimalAIHerdPanic extends Goal {
     protected double randPosZ;
     protected boolean running;
 
-    public AnimalAIHerdPanic(PathfinderMob creature, double speedIn) {
+    public HerdPanicGoal(PathfinderMob creature, double speedIn) {
         this.creature = creature;
         this.speed = speedIn;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE));
         this.targetEntitySelector = new Predicate<PathfinderMob>() {
             @Override
             public boolean apply(@Nullable PathfinderMob animal) {
-                if (animal instanceof IHerdPanic && animal.getType() == creature.getType()) {
-                    return ((IHerdPanic) animal).canPanic();
+                if (animal instanceof IPanic && animal.getType() == creature.getType()) {
+                    return ((IPanic) animal).canPanic();
                 }
                 return false;
             }
@@ -56,7 +54,7 @@ public class AnimalAIHerdPanic extends Goal {
                     return true;
                 }
             }
-            if (this.creature.getLastHurtByMob() != null && this.creature instanceof IHerdPanic && ((IHerdPanic) this.creature).canPanic()) {
+            if (this.creature.getLastHurtByMob() != null && this.creature instanceof IPanic && ((IPanic) this.creature).canPanic()) {
                 List<? extends PathfinderMob> list = this.creature.level.getEntitiesOfClass(this.creature.getClass(), this.getTargetableArea(), this.targetEntitySelector);
                 for (PathfinderMob creatureEntity : list) {
                     creatureEntity.setLastHurtByMob(this.creature.getLastHurtByMob());
@@ -109,8 +107,8 @@ public class AnimalAIHerdPanic extends Goal {
      * Execute a one shot task or start executing a continuous task
      */
     public void start() {
-        if (this.creature instanceof IHerdPanic) {
-            ((IHerdPanic) this.creature).onPanic();
+        if (this.creature instanceof IPanic) {
+            ((IPanic) this.creature).onPanic();
         }
         this.creature.getNavigation().moveTo(this.randPosX, this.randPosY, this.randPosZ, this.speed);
 

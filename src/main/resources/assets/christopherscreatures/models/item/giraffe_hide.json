@@ -1,6 +1,6 @@
 {
-    "parent": "minecraft:item/generated",
-    "texture": {
+    "parent": "item/generated",
+    "textures": {
         "layer0": "christopherscreatures:item/giraffe_hide"
     }
 }

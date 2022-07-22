@@ -1,4 +1,4 @@
-package net.akaneo.christopherscreatures.entity.giraffe;
+package net.akaneo.christopherscreatures.entity.lioness;
 
 import net.akaneo.christopherscreatures.ChristophersCreatures;
 import net.minecraft.resources.ResourceLocation;
@@ -7,26 +7,26 @@ import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
-public class GiraffeModel extends AnimatedGeoModel<GiraffeEntity> {
+public class LionessModel extends AnimatedGeoModel<LionessEntity> {
     @Override
-    public ResourceLocation getModelLocation(GiraffeEntity object) {
-        return new ResourceLocation(ChristophersCreatures.MOD_ID, "geo/giraffe.geo.json");
+    public ResourceLocation getModelLocation(LionessEntity object) {
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "geo/lioness.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GiraffeEntity object) {
-        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/giraffe.png");
+    public ResourceLocation getTextureLocation(LionessEntity object) {
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/lion/lioness.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(GiraffeEntity animatable) {
-        return new ResourceLocation(ChristophersCreatures.MOD_ID, "animations/giraffe.animation.json");
+    public ResourceLocation getAnimationFileLocation(LionessEntity animatable) {
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "animations/lioness.animation.json");
     }
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
-    public void setLivingAnimations(GiraffeEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
+    public void setLivingAnimations(LionessEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
         super.setLivingAnimations(entity, uniqueID, customPredicate);
-        IBone head = this.getAnimationProcessor().getBone("Head2");
+        IBone head = this.getAnimationProcessor().getBone("Head");
 
         EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
         if (head != null) {
