@@ -1,9 +1,9 @@
 package net.akaneo.christopherscreatures.world;
 
-import com.github.alexthe666.citadel.config.biome.SpawnBiomeData;
 import net.akaneo.christopherscreatures.ChristophersCreatures;
 import net.akaneo.christopherscreatures.config.BiomeConfig;
 import net.akaneo.christopherscreatures.config.CCConfig;
+import net.akaneo.christopherscreatures.config.biome.SpawnBiomeData;
 import net.akaneo.christopherscreatures.entity.CCEntityRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.MobCategory;
@@ -17,13 +17,17 @@ import org.apache.commons.lang3.tuple.Pair;
 public class CCWorldRegistry {
     public static boolean initBiomes = false;
 
+    public CCWorldRegistry() {
+    }
+
     public static void onBiomesLoad(BiomeLoadingEvent event) {
         initBiomes = true;
         if (testBiome(BiomeConfig.giraffe, event.getCategory(), event.getName()) && CCConfig.giraffeSpawnWeight > 0) {
-            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.GIRAFFE.get(), CCConfig.giraffeSpawnWeight, 2, 5));
+            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.GIRAFFE.get(), CCConfig.giraffeSpawnWeight, 3, 5));
         }
+
         if (testBiome(BiomeConfig.lioness, event.getCategory(), event.getName()) && CCConfig.lionessSpawnWeight > 0) {
-            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.LIONESS.get(), CCConfig.lionessSpawnWeight, 2, 5));
+            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.LIONESS.get(), CCConfig.lionessSpawnWeight, 3, 5));
         }
     }
 

@@ -2,6 +2,7 @@ package net.akaneo.christopherscreatures.entity.lioness;
 
 import net.akaneo.christopherscreatures.config.CCConfig;
 import net.akaneo.christopherscreatures.entity.CCEntityRegistry;
+import net.akaneo.christopherscreatures.misc.CCSoundRegistry;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -20,6 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -56,16 +58,16 @@ public class LionessEntity extends Animal implements IAnimatable {
         return SoundEvents.GENERIC_DEATH;
     }
 
+    protected SoundEvent getAmbientSound() {
+        return CCSoundRegistry.ROAR;
+    }
+
     public boolean checkSpawnRules(LevelAccessor worldIn, MobSpawnType spawnReasonIn) {
         return CCEntityRegistry.rollSpawn(CCConfig.lionessSpawnRolls, this.getRandom(), spawnReasonIn) && super.checkSpawnRules(worldIn, spawnReasonIn);
     }
 
-    public int getMaxSpawnClusterSize() {
-        return 5;
-    }
-
-    public boolean isMaxGroupSizeReached(int sizeIn) {
-        return false;
+    public boolean checkSpawnObstruction(LevelReader worldIn) {
+        return !worldIn.containsAnyLiquid(this.getBoundingBox());
     }
 
     public boolean isFood(ItemStack stack) {

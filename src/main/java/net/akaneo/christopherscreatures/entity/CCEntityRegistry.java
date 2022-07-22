@@ -22,7 +22,7 @@ import java.util.Random;
 public class CCEntityRegistry {
     public static final DeferredRegister<EntityType<?>> DEF_REG = DeferredRegister.create(ForgeRegistries.ENTITIES, ChristophersCreatures.MOD_ID);
 
-    public static final RegistryObject<EntityType<GiraffeEntity>> GIRAFFE = DEF_REG.register("giraffe", () -> registerEntity(EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE).sized(1.5F, 2.7F), "giraffe"));
+    public static final RegistryObject<EntityType<GiraffeEntity>> GIRAFFE = DEF_REG.register("giraffe", () -> registerEntity(EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE).sized(1.5F, 3.7F), "giraffe"));
     public static final RegistryObject<EntityType<LionessEntity>> LIONESS = DEF_REG.register("lioness", () -> registerEntity(EntityType.Builder.of(LionessEntity::new, MobCategory.CREATURE).sized(1.0F, 1.0F), "lioness"));
 
 

@@ -1,8 +1,8 @@
 package net.akaneo.christopherscreatures.config;
 
-import com.github.alexthe666.citadel.config.biome.SpawnBiomeConfig;
-import com.github.alexthe666.citadel.config.biome.SpawnBiomeData;
 import net.akaneo.christopherscreatures.ChristophersCreatures;
+import net.akaneo.christopherscreatures.config.biome.SpawnBiomeConfig;
+import net.akaneo.christopherscreatures.config.biome.SpawnBiomeData;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;

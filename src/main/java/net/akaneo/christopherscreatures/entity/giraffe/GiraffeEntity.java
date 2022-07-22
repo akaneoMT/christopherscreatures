@@ -23,6 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -69,12 +70,8 @@ public class GiraffeEntity extends Animal implements IAnimatable, IPanic {
         return CCEntityRegistry.rollSpawn(CCConfig.giraffeSpawnRolls, this.getRandom(), spawnReasonIn) && super.checkSpawnRules(worldIn, spawnReasonIn);
     }
 
-    public int getMaxSpawnClusterSize() {
-        return 6;
-    }
-
-    public boolean isMaxGroupSizeReached(int sizeIn) {
-        return false;
+    public boolean checkSpawnObstruction(LevelReader worldIn) {
+        return !worldIn.containsAnyLiquid(this.getBoundingBox());
     }
 
     public boolean hurt(DamageSource source, float amount) {

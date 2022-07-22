@@ -7,16 +7,20 @@ public class CCConfig {
     public static int giraffeSpawnWeight = 30;
     public static int giraffeSpawnRolls = 0;
 
-    public static int lionessSpawnWeight = 50;
+    public static int lionessSpawnWeight = 30;
     public static int lionessSpawnRolls = 0;
+
+    public CCConfig() {
+    }
 
     public static void bake(ModConfig config) {
         try {
-            giraffeSpawnWeight = ConfigHolder.COMMON.giraffeSpawnWeight.get();
-            giraffeSpawnRolls = ConfigHolder.COMMON.giraffeSpawnRolls.get();
+            giraffeSpawnWeight = (Integer) net.akaneo.christopherscreatures.config.ConfigHolder.COMMON.giraffeSpawnWeight.get();
+            giraffeSpawnRolls = (Integer) net.akaneo.christopherscreatures.config.ConfigHolder.COMMON.giraffeSpawnRolls.get();
 
-            lionessSpawnWeight = ConfigHolder.COMMON.lionessSpawnWeight.get();
-            lionessSpawnRolls = ConfigHolder.COMMON.lionessSpawnRolls.get();
+            lionessSpawnWeight = (Integer) net.akaneo.christopherscreatures.config.ConfigHolder.COMMON.lionessSpawnWeight.get();
+            lionessSpawnRolls = (Integer) net.akaneo.christopherscreatures.config.ConfigHolder.COMMON.lionessSpawnRolls.get();
+
         } catch (Exception e) {
             ChristophersCreatures.LOGGER.warn("An exception was caused trying to load the config for Christopher's Creatures.");
             e.printStackTrace();

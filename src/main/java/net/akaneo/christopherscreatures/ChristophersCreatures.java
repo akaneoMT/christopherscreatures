@@ -7,9 +7,12 @@ import net.akaneo.christopherscreatures.entity.CCEntityRegistry;
 import net.akaneo.christopherscreatures.entity.giraffe.GiraffeRenderer;
 import net.akaneo.christopherscreatures.entity.lioness.LionessRenderer;
 import net.akaneo.christopherscreatures.item.CCItemRegistry;
+import net.akaneo.christopherscreatures.world.CCWorldRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.OnDatapackSyncEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -44,6 +47,7 @@ public class ChristophersCreatures {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.addListener(this::onBiomeLoadFromJSON);
 
     }
 
@@ -55,6 +59,11 @@ public class ChristophersCreatures {
             CCConfig.bake(config);
         }
         BiomeConfig.init();
+    }
+
+    @SubscribeEvent
+    public void onBiomeLoadFromJSON(BiomeLoadingEvent event) {
+        CCWorldRegistry.onBiomesLoad(event);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
