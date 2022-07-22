@@ -103,6 +103,6 @@ public class LionessEntity extends Animal implements IAnimatable {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return CCEntityRegistry.GIRAFFE.get().create(serverLevel);
+        return CCEntityRegistry.LIONESS.get().create(serverLevel);
     }
 }

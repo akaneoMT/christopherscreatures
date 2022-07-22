@@ -5,6 +5,7 @@ import net.akaneo.christopherscreatures.config.CCConfig;
 import net.akaneo.christopherscreatures.config.ConfigHolder;
 import net.akaneo.christopherscreatures.entity.CCEntityRegistry;
 import net.akaneo.christopherscreatures.entity.giraffe.GiraffeRenderer;
+import net.akaneo.christopherscreatures.entity.lioness.LionessRenderer;
 import net.akaneo.christopherscreatures.item.CCItemRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
@@ -58,6 +59,7 @@ public class ChristophersCreatures {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         EntityRenderers.register(CCEntityRegistry.GIRAFFE.get(), GiraffeRenderer::new);
+        EntityRenderers.register(CCEntityRegistry.LIONESS.get(), LionessRenderer::new);
     }
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code

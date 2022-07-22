@@ -14,6 +14,7 @@ import java.util.Map;
 
 public class BiomeConfig {
     public static Pair<String, SpawnBiomeData> giraffe = Pair.of("christopherscreatures:giraffe_spawns", DefaultBiomes.GIRAFFE);
+    public static Pair<String, SpawnBiomeData> lioness = Pair.of("christopherscreatures:lioness_spawns", DefaultBiomes.LIONESS);
 
     private static boolean init = false;
     private static Map<String, SpawnBiomeData> biomeConfigValues = new HashMap<>();

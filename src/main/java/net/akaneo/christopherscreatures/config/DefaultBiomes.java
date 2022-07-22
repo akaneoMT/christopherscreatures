@@ -18,9 +18,7 @@ public class DefaultBiomes {
             .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "terralith:savanna_slopes", 6)
             .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "terralith:shrubland", 7)
             .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "terralith:red_oasis", 8)
-            .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "minecraft:jungle_edge", 9)
-            .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "minecraft:modified_jungle_edge", 9)
-            ;
+            .addBiomeEntry(BiomeEntryType.REGISTRY_NAME, false, "minecraft:sparse_jungle", 9);
     public static final SpawnBiomeData LIONESS = new SpawnBiomeData()
             .addBiomeEntry(BiomeEntryType.BIOME_DICT, false, "overworld", 0)
             .addBiomeEntry(BiomeEntryType.BIOME_CATEGORY, false, "savanna", 0)

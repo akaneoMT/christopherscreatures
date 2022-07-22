@@ -14,6 +14,7 @@ public class CCConfig {
         try {
             giraffeSpawnWeight = ConfigHolder.COMMON.giraffeSpawnWeight.get();
             giraffeSpawnRolls = ConfigHolder.COMMON.giraffeSpawnRolls.get();
+
             lionessSpawnWeight = ConfigHolder.COMMON.lionessSpawnWeight.get();
             lionessSpawnRolls = ConfigHolder.COMMON.lionessSpawnRolls.get();
         } catch (Exception e) {

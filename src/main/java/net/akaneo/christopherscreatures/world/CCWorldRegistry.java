@@ -20,7 +20,10 @@ public class CCWorldRegistry {
     public static void onBiomesLoad(BiomeLoadingEvent event) {
         initBiomes = true;
         if (testBiome(BiomeConfig.giraffe, event.getCategory(), event.getName()) && CCConfig.giraffeSpawnWeight > 0) {
-            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.GIRAFFE.get(), CCConfig.giraffeSpawnWeight, 3, 5));
+            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.GIRAFFE.get(), CCConfig.giraffeSpawnWeight, 2, 5));
+        }
+        if (testBiome(BiomeConfig.lioness, event.getCategory(), event.getName()) && CCConfig.lionessSpawnWeight > 0) {
+            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.LIONESS.get(), CCConfig.lionessSpawnWeight, 2, 5));
         }
     }
 
