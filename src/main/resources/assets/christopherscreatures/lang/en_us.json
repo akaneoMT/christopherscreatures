@@ -1,3 +1,4 @@
 {
-    item.christopherscreatures.giraffe_spawn_egg : "Giraffe Spawn Egg"
+    "item.christopherscreatures.giraffe_spawn_egg" : "Giraffe Spawn Egg",
+    "item.christopherscreatures.giraffe_hide" : "Giraffe Hide"
 }

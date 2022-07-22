@@ -170,7 +170,7 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.27')
 
     compileOnly fg.deobf("curse.maven:alexsmobs-426558:3782294")
-    compileOnly fg.deobf("curse.maven:citadel-331936:3732360")
+    implementation fg.deobf("curse.maven:citadel-331936:3732360")
     compileOnly fg.deobf("curse.maven:africraft-579688:3876394")
 
     // For more info...

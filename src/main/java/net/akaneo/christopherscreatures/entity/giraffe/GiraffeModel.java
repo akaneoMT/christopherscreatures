@@ -1,6 +1,6 @@
 package net.akaneo.christopherscreatures.entity.giraffe;
 
-import net.akaneo.christopherscreatures.ChristophersCreaturesMain;
+import net.akaneo.christopherscreatures.ChristophersCreatures;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -10,17 +10,17 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 public class GiraffeModel extends AnimatedGeoModel<GiraffeEntity> {
     @Override
     public ResourceLocation getModelLocation(GiraffeEntity object) {
-        return new ResourceLocation(ChristophersCreaturesMain.MOD_ID, "geo/giraffe.geo.json");
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "geo/giraffe.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureLocation(GiraffeEntity object) {
-        return new ResourceLocation(ChristophersCreaturesMain.MOD_ID, "textures/entity/giraffe.png");
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/giraffe.png");
     }
 
     @Override
     public ResourceLocation getAnimationFileLocation(GiraffeEntity animatable) {
-        return new ResourceLocation(ChristophersCreaturesMain.MOD_ID, "animations/giraffe.animation.json");
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "animations/giraffe.animation.json");
     }
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override

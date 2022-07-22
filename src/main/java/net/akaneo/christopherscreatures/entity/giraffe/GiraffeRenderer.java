@@ -2,7 +2,7 @@ package net.akaneo.christopherscreatures.entity.giraffe;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.akaneo.christopherscreatures.ChristophersCreaturesMain;
+import net.akaneo.christopherscreatures.ChristophersCreatures;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -18,7 +18,7 @@ public class GiraffeRenderer extends GeoEntityRenderer<GiraffeEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(GiraffeEntity instance) {
-        return new ResourceLocation(ChristophersCreaturesMain.MOD_ID, "textures/entity/giraffe.png");
+        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/giraffe.png");
     }
 
     @Override
