@@ -16,3 +16,6 @@ Have you ever wanted to play Minecraft with some gorgeous vanilla-friendly zebra
 This mod adds:
 - Northern Giraffe
 - Lion (WIP)
+
+<br>
+<img src="https://raw.githubusercontent.com/akaneoMT/christopherscreatures/master/akaneo_banner.png" width="50%">
