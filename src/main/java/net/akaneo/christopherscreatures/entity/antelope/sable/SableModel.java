@@ -8,14 +8,18 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.model.provider.data.EntityModelData;
 
 public class SableModel extends AnimatedGeoModel<SableEntity> {
+
+    private static final ResourceLocation TEXTURE_FEMALE = new ResourceLocation("christopherscreatures:textures/entity/antelope/sable/sable_female.png");
+    private static final ResourceLocation TEXTURE_MALE = new ResourceLocation("christopherscreatures:textures/entity/antelope/sable/sable_male.png");
+
     @Override
     public ResourceLocation getModelLocation(SableEntity object) {
         return new ResourceLocation(ChristophersCreatures.MOD_ID, "geo/sable.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SableEntity object) {
-        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/antelope/sable.png");
+    public ResourceLocation getTextureLocation(SableEntity entity) {
+        return entity.isMale() ? TEXTURE_MALE : TEXTURE_FEMALE;
     }
 
     @Override

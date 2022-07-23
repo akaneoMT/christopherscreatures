@@ -2,7 +2,6 @@ package net.akaneo.christopherscreatures.entity.antelope.sable;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.akaneo.christopherscreatures.ChristophersCreatures;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -10,6 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class SableRenderer extends GeoEntityRenderer<SableEntity> {
+
+    private static final ResourceLocation TEXTURE_FEMALE = new ResourceLocation("christopherscreatures:textures/entity/antelope/sable/sable_female.png");
+    private static final ResourceLocation TEXTURE_MALE = new ResourceLocation("christopherscreatures:textures/entity/antelope/sable/sable_male.png");
+
     public SableRenderer(EntityRendererProvider.Context renderManager)
     {
         super(renderManager, new SableModel());
@@ -17,8 +20,8 @@ public class SableRenderer extends GeoEntityRenderer<SableEntity> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SableEntity instance) {
-        return new ResourceLocation(ChristophersCreatures.MOD_ID, "textures/entity/antelope/sable.png");
+    public ResourceLocation getTextureLocation(SableEntity entity) {
+        return entity.isMale() ? TEXTURE_MALE : TEXTURE_FEMALE;
     }
 
     @Override
