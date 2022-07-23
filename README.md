@@ -1,4 +1,4 @@
-# Christopher's Creatures
+# Christopher's Creatures 
 
 <a href="https://www.curseforge.com/minecraft/mc-mods/africraft">
   <img src="http://cf.way2muchnoise.eu/full_579688_downloads.svg" alt="Curseforge Downloads">
