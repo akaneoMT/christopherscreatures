@@ -16,8 +16,11 @@ public class CCItemRegistry {
     public static final DeferredRegister<Item> DEF_REG = DeferredRegister.create(ForgeRegistries.ITEMS, ChristophersCreatures.MOD_ID);
 
     public static final RegistryObject<Item> GIRAFFE_HIDE = DEF_REG.register("giraffe_hide", () -> new Item(new Item.Properties().tab(CCCreativeModeTab.TAB_CC)));
+    public static final RegistryObject<Item> ANTELOPE_HIDE = DEF_REG.register("antelope_hide", () -> new Item(new Item.Properties().tab(CCCreativeModeTab.TAB_CC)));
+
 
     public static final RegistryObject<Item> GIRAFFE_SPAWN_EGG = DEF_REG.register("giraffe_spawn_egg", () -> new ForgeSpawnEggItem(CCEntityRegistry.GIRAFFE,0xC9A886, 0x733F2B, new Item.Properties().tab(CCCreativeModeTab.TAB_CC)));
     public static final RegistryObject<Item> LIONESS_SPAWN_EGG = DEF_REG.register("lioness_spawn_egg", () -> new ForgeSpawnEggItem(CCEntityRegistry.LIONESS,0xE0BA8E, 0xCDA174, new Item.Properties().tab(CCCreativeModeTab.TAB_CC)));
+    public static final RegistryObject<Item> SABLE_SPAWN_EGG = DEF_REG.register("sable_spawn_egg", () -> new ForgeSpawnEggItem(CCEntityRegistry.SABLE,0x31303B, 0x8B4B27, new Item.Properties().tab(CCCreativeModeTab.TAB_CC)));
 
 }

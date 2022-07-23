@@ -3,6 +3,7 @@ package net.akaneo.christopherscreatures.entity;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import net.akaneo.christopherscreatures.ChristophersCreatures;
+import net.akaneo.christopherscreatures.entity.antelope.sable.SableEntity;
 import net.akaneo.christopherscreatures.entity.giraffe.GiraffeEntity;
 import net.akaneo.christopherscreatures.entity.lioness.LionessEntity;
 import net.minecraft.tags.TagKey;
@@ -24,6 +25,7 @@ public class CCEntityRegistry {
 
     public static final RegistryObject<EntityType<GiraffeEntity>> GIRAFFE = DEF_REG.register("giraffe", () -> registerEntity(EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE).sized(1.5F, 3.7F), "giraffe"));
     public static final RegistryObject<EntityType<LionessEntity>> LIONESS = DEF_REG.register("lioness", () -> registerEntity(EntityType.Builder.of(LionessEntity::new, MobCategory.CREATURE).sized(1.0F, 1.0F), "lioness"));
+    public static final RegistryObject<EntityType<SableEntity>> SABLE = DEF_REG.register("sable", () -> registerEntity(EntityType.Builder.of(SableEntity::new, MobCategory.CREATURE).sized(1.0F, 1.0F), "sable"));
 
 
     private static final EntityType registerEntity(EntityType.Builder builder, String entityName) {
@@ -36,6 +38,8 @@ public class CCEntityRegistry {
         event.put(GIRAFFE.get(), GiraffeEntity.bakeAttributes().build());
         SpawnPlacements.register(LIONESS.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
         event.put(LIONESS.get(), LionessEntity.bakeAttributes().build());
+        SpawnPlacements.register(SABLE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+        event.put(SABLE.get(), LionessEntity.bakeAttributes().build());
     }
 
     public static Predicate<LivingEntity> buildPredicateFromTag(TagKey<EntityType<?>> entityTag){

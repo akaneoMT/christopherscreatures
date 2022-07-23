@@ -1,6 +1,8 @@
 {
     "item.christopherscreatures.giraffe_spawn_egg" : "Giraffe Spawn Egg",
     "item.christopherscreatures.lioness_spawn_egg" : "Lioness Spawn Egg",
+    "item.christopherscreatures.sable_spawn_egg" : "Sable Spawn Egg",
     "item.christopherscreatures.giraffe_hide" : "Giraffe Hide",
+    "item.christopherscreatures.antelope_hide" : "Antelope Hide",
     "itemGroup.tab_cc": "Christopher's Creatures"
 }

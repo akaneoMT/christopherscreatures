@@ -29,6 +29,10 @@ public class CCWorldRegistry {
         if (testBiome(BiomeConfig.lioness, event.getCategory(), event.getName()) && CCConfig.lionessSpawnWeight > 0) {
             event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.LIONESS.get(), CCConfig.lionessSpawnWeight, 3, 5));
         }
+
+        if (testBiome(BiomeConfig.sable, event.getCategory(), event.getName()) && CCConfig.sableSpawnWeight > 0) {
+            event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(CCEntityRegistry.SABLE.get(), CCConfig.sableSpawnWeight, 3, 5));
+        }
     }
 
     public static boolean testBiome(Pair<String, SpawnBiomeData> entry, Biome.BiomeCategory category, ResourceLocation registryName) {

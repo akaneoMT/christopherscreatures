@@ -4,6 +4,7 @@ import net.akaneo.christopherscreatures.config.BiomeConfig;
 import net.akaneo.christopherscreatures.config.CCConfig;
 import net.akaneo.christopherscreatures.config.ConfigHolder;
 import net.akaneo.christopherscreatures.entity.CCEntityRegistry;
+import net.akaneo.christopherscreatures.entity.antelope.sable.SableRenderer;
 import net.akaneo.christopherscreatures.entity.giraffe.GiraffeRenderer;
 import net.akaneo.christopherscreatures.entity.lioness.LionessRenderer;
 import net.akaneo.christopherscreatures.item.CCItemRegistry;
@@ -69,6 +70,7 @@ public class ChristophersCreatures {
     private void clientSetup(final FMLClientSetupEvent event) {
         EntityRenderers.register(CCEntityRegistry.GIRAFFE.get(), GiraffeRenderer::new);
         EntityRenderers.register(CCEntityRegistry.LIONESS.get(), LionessRenderer::new);
+        EntityRenderers.register(CCEntityRegistry.SABLE.get(), SableRenderer::new);
     }
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code

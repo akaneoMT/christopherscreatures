@@ -1,6 +1,8 @@
 {
     "item.christopherscreatures.giraffe_spawn_egg" : "Oeuf de Girafe",
     "item.christopherscreatures.lioness_spawn_egg" : "Oeuf de Lionne",
+    "item.christopherscreatures.sable_spawn_egg" : "Oeuf d'Antilope Noire",
     "item.christopherscreatures.giraffe_hide" : "Peau de Girafe",
+    "item.christopherscreatures.antelope_hide" : "Peau d'Antilope",
     "itemGroup.tab_cc": "Christopher's Creatures"
 }
