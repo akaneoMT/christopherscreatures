@@ -18,4 +18,4 @@ This mod adds:
 - Lion (WIP)
 
 <br>
-<img src="https://raw.githubusercontent.com/akaneoMT/christopherscreatures/master/akaneo_banner.png" width="50%">
+<img src="https://raw.githubusercontent.com/akaneoMT/christopherscreatures/master/akaneo_banner_large.png" width="50%">
